@@ -7,7 +7,8 @@
 
 ### SETUP 
 
-# SDE: dX_t = -X_t dt + alpha X_t dW_t # alpha = {0.1, 1, 10}
+# SDE: dX_t = - X_t dt + alpha X_t dW_t 
+# alpha = {0.1, 1, 10}
 # X_0 = {0.1, 1, 10}
 # stepsize = {0.001, 0.005, 0.01, 0.1, 0.2}
 # T = 5
@@ -21,9 +22,13 @@
 
 
 load("./montecarlo_results_aggregated_full.RData")
+error_total_p1 = error_total
+load("./montecarlo_results_aggregated_add.RData")
+error_total_p2 = error_total
 
+error_total = rbind(error_total_p1, error_total_p2)
 
-error_summary = error_total[error_total$start == 1 & error_total$alpha == 1, -2]
+error_summary = error_total[error_total$start == 10 & error_total$alpha == .1, -2]
 error_summary = error_summary[-2]
 
 stepsize = error_summary$stepsize
@@ -46,3 +51,4 @@ plot(stepsize, error_summary$EM_sd_error,log='xy',type="b",pch=1,xlab="Stepsize"
 points(stepsize, error_summary$Barker_sd_error, type="b",pch=2, col="red")
 points(stepsize, error_summary$TamedEM_sd_error, type="b", pch=3, col="blue")
 legend("center", legend=c("EM", "SS", "TamedEM"), pch=c(1,2,3), col=c("black", "red", "blue"))
+
