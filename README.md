@@ -1,5 +1,6 @@
-# Codes, Simulation Data, Plot for "Skew-symmetric schemes for stochastic differential equations with
-non-Lipschitz drift: an unadjusted Barker algorithm"
+# Skew-symmetric schemes for stochastic differential equations with non-Lipschitz drift: an unadjusted Barker algorithm
+
+Codes, Simulation Data, Plot
 
 - Section 5.1: Multiplicative volatility
 - Section 5.2: Poisson random effects model
