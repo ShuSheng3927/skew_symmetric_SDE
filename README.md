@@ -2,7 +2,7 @@
 
 Codes, Simulation Data, Plot
 
-- Section 5.1: Multiplicative volatility
+- Section 5.1: Multiplicative volatility and Ginzburg-Landau
 - Section 5.2: Poisson random effects model
 - Section 5.3: Soft spheres in an anharmonic trap
 - Supplement: Ornstein-Uhlenbeck process
