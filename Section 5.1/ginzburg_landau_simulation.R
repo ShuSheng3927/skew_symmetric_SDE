@@ -4,8 +4,8 @@
 
 # SDE: dX_t = [(eta-alpha^2/2)X_t - lambda X_t^3] dt + alpha X_t dW_t 
 # alpha = {0.5, 2}
-# X_0 = {0.5, 1, 5}
-# stepsize = {0.001, 0.005, 0.01, 0.1, 0.2, 0.3}
+# X_0 = {0.1, 1, 10}
+# stepsize = {0.001, 0.005, 0.010, 0.020, 0.050}
 # T = 5
 # Monte Carlo Iteration = 100,000
 
@@ -23,7 +23,7 @@ lambda = 1
 
 # Parameter grid
 alphas <- c(0.5, 2)
-starts <- c(0.5, 1, 5)
+starts <- c(0.1, 1, 10)
 
 error_total = c() 
 
@@ -78,7 +78,7 @@ for (alpha in alphas) {
     # Build argument list
     argument_values <- list()
     for (seed in 1:100000) { 
-      for (Delta in c(0.001, 0.005, 0.01, 0.1, 0.2, 0.3)) {
+      for (Delta in c(0.001, 0.005, 0.010, 0.020, 0.050)) {
         argument_values <- append(argument_values, list(c(seed, Delta)))
       }
     }

@@ -20,8 +20,8 @@ ginzburg_landau_data <- error_total %>%
     Method = factor(Method,
                     levels = c("Euler-Maruyama", "Tamed Euler", "Skew-Symmetric")),
     start = factor(start,
-                   levels = c(0.5, 1, 5),
-                   labels = c("0.5", "1", "5")
+                   levels = c(0.1, 1, 10),
+                   labels = c("0.1", "1", "10")
     ),
     alpha = factor(alpha,
                    levels = c(0.5, 2),
